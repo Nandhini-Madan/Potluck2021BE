@@ -1,10 +1,10 @@
-
-
+// pre-hashed password for "abc12345"
+const hashedPassword = "$2a$14$qHqCbXUImiBOgXlFNX47wuA7uFWNGNAZutYLvOeye9eotewGlfYV6"
   exports.seed = async function(knex) {
     await knex("users").insert([
-      { ID: 1, firstName: "nandhini",lastName:"Madan",emailId:"abc@gmail.com",password:"abc",userType:"guest"},
-      { ID: 2, firstName: "nandhini1",lastName:"Madan",emailId:"abc1@gmail.com",password:"abc",userType:"organizer"},
-      { ID: 3, firstName: "nandy",lastName:"Madan",emailId:"qwe@gmail.com",password:"abc",userType:"guest"},
+      {  firstName: "nandhini",lastName:"Madan",emailId:"abc@gmail.com",password:hashedPassword,userType:"guest"},
+      {  firstName: "nandhini1",lastName:"Madan",emailId:"abc1@gmail.com",password:hashedPassword,userType:"organizer"},
+      {  firstName: "nandy",lastName:"Madan",emailId:"qwe@gmail.com",password:hashedPassword,userType:"guest"},
       
     ])
   };

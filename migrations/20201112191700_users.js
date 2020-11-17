@@ -1,7 +1,7 @@
 
 exports.up = async function (knex) {
   await knex.schema.createTable('users', users => {
-    users.increments("ID");
+    users.increments("ID")
 
     users
       .string('firstName', 255)
@@ -22,30 +22,33 @@ exports.up = async function (knex) {
     users
       .string('userType', 255)
       .notNullable()
-    .defaultTo('Guest');
+      .defaultTo('Guest');
   });
-  
-  await knex.schema.createTable('addpotluck', table => {
+
+  await knex.schema.createTable('addPotluck', table => {
     table.increments('potluckId');
     table
-      .string('potluckName')
+      .string('potluckName',255)
       .notNullable()
     table
-      .string('date')
+      .string('date',255)
       .notNullable()
     table
-      .string('time')
+      .string('time',255)
       .notNullable()
     table
-      .string('location')
+      .string('location',255)
       .notNullable()
     table
-      .string('foodItems')
+      .string('foodItems',255)
       .notNullable()
+    table
+      .string("notes",255)
+
     table
       .integer('userId')
       .notNull()
-      .defaultTo(1)
+
       .references("ID")
       .inTable("users")
       .onDelete("CASCADE")
@@ -72,7 +75,7 @@ exports.up = async function (knex) {
       .integer('inviteId')
       .notNull()
       .references('potluckId')
-    .inTable('addpotluck')
+      .inTable('addPotluck')
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
   })
@@ -81,8 +84,9 @@ exports.up = async function (knex) {
 };
 
 exports.down = async function (knex) {
+
   await knex.schema.dropTableIfExists('inviteList');
-  await knex.schema.dropTableIfExists('addpotluck');
+  await knex.schema.dropTableIfExists('addPotluck');
   await knex.schema.dropTableIfExists('users');
 
 };
