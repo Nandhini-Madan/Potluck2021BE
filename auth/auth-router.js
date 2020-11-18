@@ -84,7 +84,6 @@ router.post("/:id/addPotluck", async (req, res, next) => {
         console.log("New user", newPotluck)
         res.status(201).json(newPotluck)
 
-
     }
     catch (err) {
         next(err)
@@ -111,20 +110,22 @@ router.put("/:id/editPotluck", async (req, res, next) => {
         next(err)
     }
 })
-router.delete("/:id/deletePotluck",async(req,res,next)=>{
-    const id=req.params.id
-    const deleted=await model.deletePotluck(id)
-    try{
-        if(deleted){
+
+
+router.delete("/:id/deletePotluck", async (req, res, next) => {
+    const id = req.params.id
+    const deleted = await model.deletePotluck(id)
+    try {
+        if (deleted) {
             res.status(200).json({
-                message:"potluck has been deleted"
+                message: "potluck has been deleted"
             })
         }
     }
-    catch(err){
+    catch (err) {
         next(err)
     }
-    
+
 
 
 })
