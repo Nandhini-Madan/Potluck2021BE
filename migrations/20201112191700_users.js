@@ -19,13 +19,12 @@ exports.up = async function (knex) {
     users
       .string('password', 255)
       .notNullable();
-      /*
     users
       .string('userType', 255)
       .notNullable()
-      .defaultTo('Guest');*/
+      .defaultTo('Guest');
   });
-/*
+
   await knex.schema.createTable('addPotluck', table => {
     table.increments('potluckId');
     table
@@ -55,7 +54,7 @@ exports.up = async function (knex) {
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
 
-  });/*
+  });
   await knex.schema.createTable('inviteList', list => {
     list.integer('guestId')
       .notNull()
@@ -79,15 +78,15 @@ exports.up = async function (knex) {
       .inTable('addPotluck')
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
-  })*/
+  })
 
 
 };
 
 exports.down = async function (knex) {
 
-  //await knex.schema.dropTableIfExists('inviteList');
- // await knex.schema.dropTableIfExists('addPotluck');
+  await knex.schema.dropTableIfExists('inviteList');
+  await knex.schema.dropTableIfExists('addPotluck');
   await knex.schema.dropTableIfExists('users');
 
 };
