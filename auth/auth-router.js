@@ -16,7 +16,7 @@ router.post("/login", async (req, res, next) => {
     try {
         const { emailId, password } = req.body
         const user = await model.findByEmailId(emailId)
-        console.log("user", user)
+        console.log(user.password, "===", password)
         if (!user) {
             return res.status(401).json({
                 message: "Invalid Credentials"
@@ -24,6 +24,7 @@ router.post("/login", async (req, res, next) => {
         }
         //comparing with hashed password 
         const passwordValid = await bycrypt.compare(password, user.password)
+        console.log({passwordValid})
         if (!passwordValid) {
             return res.status(401).json({
                 message: "Invalid password"
