@@ -19,10 +19,11 @@ exports.up = async function (knex) {
     users
       .string('password', 255)
       .notNullable();
+      /*
     users
       .string('userType', 255)
       .notNullable()
-      .defaultTo('Guest');
+      .defaultTo('Guest');*/
   });
 /*
   await knex.schema.createTable('addPotluck', table => {
@@ -78,10 +79,10 @@ exports.up = async function (knex) {
       .inTable('addPotluck')
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
-  })
+  })*/
 
 
-};*/
+};
 
 exports.down = async function (knex) {
 
