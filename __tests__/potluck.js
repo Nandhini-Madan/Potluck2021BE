@@ -15,6 +15,17 @@ describe("potluck integration testing",()=>{
     })
 
     it("Post potluck",()=>{
-        it()
+        it("Add Potluck",async()=>{
+            const res=await supertest(server)
+            .post("/addpotluck")
+            .send({
+                
+            })
+            
+            expect(res.statusCode).toBe(201)
+            expect(res.type).toBe("application/json")
+            expect(res.body.potluckName).toBe("Party")
+            expect(res.body.potluckId).toBeDefined()
+        })
     })
 })
