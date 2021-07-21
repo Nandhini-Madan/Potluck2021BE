@@ -8,7 +8,7 @@ const db=require("../database/dbconfig")
 describe("potluck integration testing",()=>{
     it("Add Potluck",async()=>{
         const res=await supertest(server)
-        .post("/addpotluck")
+        .post("/4/addPotluck")
         .send({
             potluckName:"Party",
             date:"17-15-2020",
@@ -23,6 +23,7 @@ describe("potluck integration testing",()=>{
         expect(res.body.potluckName).toBe("Party")
         expect(res.body.potluckId).toBeDefined()
     })
+    
     it ("Get list of users",async()=>{
         const res= await supertest(server).get("/users")
         expect(res.statusCode).toBe(200)
