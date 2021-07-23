@@ -24,6 +24,12 @@ password-string
 userType-string
 (organizer,guest)// Lets think about this 
 
+
+| emailId  |Password |
+| ------------- | ------------- |
+|abc@gmail.com  | abc12345 |
+
+
 Login
 emailId-string
 Password-string
@@ -36,7 +42,7 @@ emailId-string
 inviteId(foreign key from addPotluck Table)
 
 
-END POINTS
+#END POINTS
 
 POST
 -/login
