@@ -9,7 +9,7 @@ const Home = (props) => {
     return (
     
 <div className="home">
-<h2>Perfect Potluck Planner!</h2>
+<h2>Reunion Potluck Planner!</h2>
 <div className="homepage">
 <div className="title">
 <p><span>Organizing a Potluck? </span>We make it easy to include a handy Potluck List for your party guests when you send online invitations! Let your guests write in their contribution, or specify what you’d like each person to bring.</p>
