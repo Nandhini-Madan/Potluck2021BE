@@ -36,7 +36,7 @@ emailId-string
 inviteId(foreign key from addPotluck Table)
 
 
-END POINTS
+END POINTS--
 
 POST
 -/login
