@@ -3,7 +3,6 @@ import * as yup from "yup";
 import axios from "axios";
 import {useHistory } from "react-router-dom";
 
-
 const formSchema = yup.object().shape({
   firstName: yup.string().required("First Name is a required."),
   lastName: yup.string().required("Last Name is a required."),
@@ -80,6 +79,7 @@ axios.post('https://potluck2020.herokuapp.com/register',formState)
 
 
   const inputChange = e => {
+    console.log(e)
     e.persist();
     const newFormData = {
       ...formState,
@@ -94,9 +94,9 @@ axios.post('https://potluck2020.herokuapp.com/register',formState)
 
 
     return (
-        
+     
     <form className='add-form' onSubmit={formSubmit}>
-    <h3>Create Your Acount</h3>
+    <h3>Lets Get Started!</h3>
        <div className='form-control'>
     <div className='form-control'>
       <label htmlFor='firstName'>
@@ -165,6 +165,7 @@ axios.post('https://potluck2020.herokuapp.com/register',formState)
 
     </div>
     </form>
+   
 
 
     )

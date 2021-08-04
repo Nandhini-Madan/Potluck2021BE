@@ -4,12 +4,12 @@ import React from 'react'
 
 const Footer = () => {
     return (
-   <div>
-   <footer>
+   <div className="footer">
+   
 
     <p> &#169;2021potluckplanner</p>
     
-</footer>
+
     </div>
     )
 }

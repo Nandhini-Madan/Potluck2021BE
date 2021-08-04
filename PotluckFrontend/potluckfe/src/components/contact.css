@@ -1,0 +1,36 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin-top: 15%;
+}
+.info{
+    margin-top: 3%;
+    transition: 0.3s;
+    width: 100%;
+    color: white;
+}
+
+  .text {
+    padding: 2px 16px;
+    
+  }
+  .contact h1{
+      font-weight: 700;
+      color: #fff;
+      font-size: 2rem;
+      border-bottom:4px solid orange;
+      
+  }
+
+  
+  h5{
+      padding: 5px;
+  }
+  h6{
+    padding: 5px;
+    color:orange;
+}

@@ -4,6 +4,9 @@ import Login from './containers/Login'
 import Aboutus  from './components/Aboutus'
 import Contact  from './components/Contact'
 import Footer  from './components/Footer'
+import Content from "./components/Dashbord/Content";
+import PrivateRoute from './containers/PrivateRoute';
+
 
 import { Link, Route, Switch } from 'react-router-dom'  
 
@@ -27,8 +30,11 @@ function App() {
           <Route path="/about" component={Aboutus} />
          <Route path="/signup" component={Signup}/>
         <Route path="/contact" component={Contact} /> 
+       
         <Route exact path="/" component={Home} />
+        
       </Switch>
+      <PrivateRoute path='/dashboard'component={Content}/>
 
       <Footer/>
     </div>

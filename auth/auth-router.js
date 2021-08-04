@@ -13,6 +13,7 @@ router.get("/users",restrict, async (req, res, next) => {
         next(err)
     }
 })
+
 router.post("/login", async (req, res, next) => {
     try {
         const { emailId, password } = req.body

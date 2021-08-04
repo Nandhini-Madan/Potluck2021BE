@@ -2,19 +2,15 @@ import React, { useState ,useEffect} from 'react'
 // import { Route, Link, useHistory } from "react-router-dom";
 import axiosWithAuth from '../utils/axiosWithAuth'
 import * as yup from "yup";
-// import axios from "axios";
+import { Route, Link , useHistory} from "react-router-dom";
 
-import { useHistory } from 'react-router-dom'
-
-
-    
 
 const formSchema = yup.object().shape({
     emailId: yup.string().email("Must be a valid email address.").required("Must include email address."),
     password: yup.string().required("Password is Required"),
 });
  
-const Login = () => {
+const Login = (props) => {
 const history = useHistory();
     const [formState, setFormState] = useState({
         emailId: "",
@@ -27,22 +23,30 @@ const history = useHistory();
         password:""
   });
 
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
     useEffect(() => {
-    
+    formSchema.isValid(formState).then((valid) => {
+      setButtonDisabled(!valid);
+    });
   }, [formState]);
 
 
   const formSubmit = e => {
       console.log(formSubmit)
     e.preventDefault();
-axiosWithAuth().post('/login',formState)
-.then((response) => console.log(response))
-.catch((err) => console.log(err));
-    history.push("/dashboard")
+      axiosWithAuth().post('login',formState)
+        .then((response) => {
+      console.log(response);
+        localStorage.setItem('token', response.data.token)
+      
+    })
+        .catch((err) => console.log(err));
         setFormState({
           emailId: "",
           password:""
         });
+        history.push("/dashboard")
   };
 
 
@@ -67,6 +71,7 @@ axiosWithAuth().post('/login',formState)
 
 
   const inputChange = e => {
+    console.log(e)
     e.persist();
     setFormState({
       ...formState,
@@ -78,9 +83,9 @@ axiosWithAuth().post('/login',formState)
 
 
     return (
-        
+        <Route> 
     <form className='add-form' onSubmit={formSubmit}>
-    <h3>Log in</h3>
+    <h3>Welcome Back!</h3>
     <div className='form-control'>
     
     <div className='form-control'>
@@ -110,13 +115,13 @@ axiosWithAuth().post('/login',formState)
         ) : null}
       </label>
      </div>
-      <button onClick={() => history.push("/dashboard")}> Login </button>
+      <button type="submit"onClick={formSubmit}> Login </button>
      
     <div className="click" onClick={() => history.push("/signup")}>Ragister</div> 
  </div>
     </form>
     
-
+</Route>
 
 
 

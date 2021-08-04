@@ -1,19 +1,23 @@
 import React from 'react'
-
+import contact from './contact.css'
 const Contact = () => {
     return (
-        <div>
-            <h1>contact coming soon </h1>
-
-            {/* We love to get feedback from customers and visitors.
-Please use the form or call us at 651-330-3064 and leave a message.
-For media inquiries, please email hello@potluckmn.com.
-
-Kasech or Nandy
-web owner
-<span>651-330-3064<span>
-karen.scher@am.jll.com. */}
+        <>
+       
+    <div className="contact">
+     <h1>Contact us</h1>
+    <div className="info">
+            <h4>We would love to here from you. Please call us or send us email.</h4>
+       
+        <div className="text">
+            <h5> Kasech or Nandhini</h5>
+            <h5> web owner</h5>
+            <h6> 555-555-5555</h6> 
+            <h6> web@web.com</h6>
+           </div>   
         </div>
+    </div>
+       </> 
     )
 }
 

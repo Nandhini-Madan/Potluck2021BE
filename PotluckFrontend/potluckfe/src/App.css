@@ -6,20 +6,20 @@ body{
 body
  {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   margin: 0;
   padding: 0;
-  /* background: linear-gradient(to right, rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.1)), url(https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80); */
-  background: url(https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80) no-repeat center center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7),
+  rgba(0, 0, 0, 0.1)), url(https://images.unsplash.com/photo-1515821937231-c43ad7ed05fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); 
   -webkit-background-size:cover ;
   -moz-background-size: cover;
   background-position: center;
   -o-background-size:cover;
-  background-size:cover;
+  background-size:cover; 
 width: 100%;
 height: 100%;
 background-attachment: fixed;
+/* opacity: 0.7; */
 }
 .App {
   font-family: sans-serif;
@@ -83,10 +83,12 @@ nav {
 /* headercss ends */
 
 /* homecss start */
+
 h2{
-  color: white;
+  color: orange;
   font-weight: 600;
   letter-spacing: 2px;
+  font-size: 3rem;
   font-family: cursive;
 }
 .title{
@@ -108,10 +110,10 @@ span{
 
 /* buttons */
 .button_slide {
-  color: #FFF;
-  border: 2px solid orange;
-  border-radius: 0px;
-  padding: 18px 36px;
+  color: black;
+  /* border: 2px solid black; */
+  border-radius: 20px;
+  padding: 14px 36px;
   display: inline-block;
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
@@ -121,6 +123,8 @@ span{
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
+  background: #FFF;
+  margin: 2%;
 }
 
 .slide_right:hover {
@@ -215,7 +219,9 @@ button:disabled {
   color: red;
 }
 
+
 .add-form {
+  /* background: black; */
   margin-bottom: 40px;
 }
 .form-control label {
@@ -224,6 +230,7 @@ button:disabled {
 
 .form-control {
   margin: 20px 0;
+  
 }
 
 .form-control input, select {
@@ -260,14 +267,16 @@ button:disabled {
 /* formcss end */
 
 /* Footercss */
-footer {
-    margin-top: 30px;
-    text-align: center;
-  
-   
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: black;
+  margin-top: 2%;
   
 }
-footer p{
-  color:white;
- 
-}
+
+
