@@ -1,3 +1,6 @@
+#Herokku 
+https://potluck2020.herokuapp.com/
+
 # back-end
  POTLUCK TABLE 
 
