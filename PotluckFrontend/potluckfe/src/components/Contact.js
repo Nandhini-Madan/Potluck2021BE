@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="contact">
      <h1>Contact us</h1>
     <div className="info">
-            <h4>We would love to here from you. Please call us or send us email.</h4>
+            <h4>We would love to hear from you. Please call us or send us email.</h4>
        
         <div className="text">
             <h5> Kasech or Nandhini</h5>

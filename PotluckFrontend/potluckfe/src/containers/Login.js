@@ -37,16 +37,15 @@ const history = useHistory();
     e.preventDefault();
       axiosWithAuth().post('login',formState)
         .then((response) => {
-      console.log(response);
         localStorage.setItem('token', response.data.token)
-      
+      history.push("/dashboard")
     })
-        .catch((err) => console.log(err));
-        setFormState({
-          emailId: "",
-          password:""
-        });
-        history.push("/dashboard")
+        // .catch((err) => console.log(err));
+        // setFormState({
+        //   emailId: "",
+        //   password:""
+        // });
+        
   };
 
 
@@ -71,11 +70,10 @@ const history = useHistory();
 
 
   const inputChange = e => {
-    console.log(e)
     e.persist();
     setFormState({
       ...formState,
-      [e.target.name]: e.target.value});
+      [e.target.name]: e.target.value,});
     validateChange(e);
   };
 
@@ -85,7 +83,7 @@ const history = useHistory();
     return (
         <Route> 
     <form className='add-form' onSubmit={formSubmit}>
-    <h3>Welcome Back!</h3>
+    <h4>Welcome Back!</h4>
     <div className='form-control'>
     
     <div className='form-control'>
@@ -115,7 +113,7 @@ const history = useHistory();
         ) : null}
       </label>
      </div>
-      <button type="submit"onClick={formSubmit}> Login </button>
+      <button> Login </button>
      
     <div className="click" onClick={() => history.push("/signup")}>Ragister</div> 
  </div>

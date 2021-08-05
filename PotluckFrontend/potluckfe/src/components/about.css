@@ -1,7 +1,11 @@
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 30%;
+    /* width: 30%; */
+    /* position: fixed; */
+}
+img{
+  width: 100%;
 }
 
 .card:hover {
@@ -10,24 +14,61 @@
   .text p {
     padding: 2px 16px;
    color: black;
+   line-height: 1.8rem;
   }
   .aboutus {
-    display: flex;
-    justify-content: space-evenly;
+    padding-top: 30px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin: 0 auto;
+    
+ }
+ .aboutus .card{
+   width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(white, orange);
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  border: 3px solid orange;
+ }
+ .container{
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
  }
  @media all and (max-width: 600px) {
     .aboutus {
         flex-direction: column;
        
     } 
-    .card{
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 90%;
-        margin: 5%;
+   
+    .aboutus .card{
+      width: auto;
+      max-width: 90%;
     }
  }
  h1{
-   color: white;
+   color: orange;
    padding: 10px;
  }
+
+ @media all and (max-width: 800px) {
+  .aboutus {
+      flex-direction: column;
+     
+  } 
+ 
+  .aboutus .card{
+    width: auto;
+    max-width: 80%;
+  }
+}
+h1{
+ color: orange;
+
+ padding: 10px;
+}

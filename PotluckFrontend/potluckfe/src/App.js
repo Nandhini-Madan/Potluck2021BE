@@ -35,7 +35,7 @@ function App() {
         
       </Switch>
       <PrivateRoute path='/dashboard'component={Content}/>
-
+<p></p>
       <Footer/>
     </div>
   );

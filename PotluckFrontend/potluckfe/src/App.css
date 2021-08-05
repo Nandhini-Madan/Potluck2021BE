@@ -143,11 +143,10 @@ form {
   width: 90%;
   max-width: 300px;
   margin: 0 auto;
- 
 }
-h3{
+h4{
   color: white;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 input,
@@ -263,6 +262,7 @@ button:disabled {
   appearance: none;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-bottom: 2%;
 }
 /* formcss end */
 
@@ -274,8 +274,7 @@ button:disabled {
   width: 100%;
   color: white;
   text-align: center;
-  background-color: black;
-  margin-top: 2%;
+  /* background-color: black; */
   
 }
 

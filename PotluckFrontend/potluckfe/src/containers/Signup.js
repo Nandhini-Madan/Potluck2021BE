@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react'
 import * as yup from "yup";
 import axios from "axios";
 import {useHistory } from "react-router-dom";
+import axiosWithAuth from '../utils/axiosWithAuth'
 
 const formSchema = yup.object().shape({
   firstName: yup.string().required("First Name is a required."),
@@ -44,11 +45,13 @@ const history = useHistory()
   const formSubmit = e => {
     e.preventDefault();
     console.log(formSubmit)
-axios.post('https://potluck2020.herokuapp.com/register',formState)
+   axiosWithAuth().post('register',formState)
 .then((response) => console.log(response))
+
 .catch((err) => console.log(err));
-    history.push("/signin")
-        setFormState({
+    history.push('/login')
+  
+     setFormState({
           firstName: "",
           lastName: "",
           emailId: "",
@@ -94,9 +97,8 @@ axios.post('https://potluck2020.herokuapp.com/register',formState)
 
 
     return (
-     
     <form className='add-form' onSubmit={formSubmit}>
-    <h3>Lets Get Started!</h3>
+    <h4>Lets Get Started!</h4>
        <div className='form-control'>
     <div className='form-control'>
       <label htmlFor='firstName'>
@@ -160,12 +162,13 @@ axios.post('https://potluck2020.herokuapp.com/register',formState)
       </label>
 </div>
 
-      <button disabled={buttonDisabled} onClick={() => history.push("/login")}>Ragister</button>
+      <button disabled={buttonDisabled}>Ragister</button>
           <div className="click" onClick={() => history.push("/login")}>Login</div> 
 
     </div>
     </form>
-   
+     
+  
 
 
     )
