@@ -6,6 +6,8 @@ import Contact  from './components/Contact'
 import Footer  from './components/Footer'
 import Content from "./components/Dashbord/Content";
 import PrivateRoute from './containers/PrivateRoute';
+import CreateEvent from "./components/Dashbord/CreateEvent";
+
 
 
 import { Link, Route, Switch } from 'react-router-dom'  
@@ -35,6 +37,7 @@ function App() {
         
       </Switch>
       <PrivateRoute path='/dashboard'component={Content}/>
+       <PrivateRoute path='/newevent'component={CreateEvent}/>
 <p></p>
       <Footer/>
     </div>

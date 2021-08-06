@@ -1,34 +1,24 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import content from './content.css'
+
 // import UserContext from "../../contexts/UserContext";
 import { Card, Button, CardHeader, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
 
 const Content = () => {
-
+const history = useHistory();
   return (
-    <div className="dashboard-content">
-      <h1>Your Upcoming Events</h1>
-
-              <Card className="eventCard">
-                
-                <CardHeader>event name goes here</CardHeader>
-                
-                <CardTitle className="eventAddress">adress goes here</CardTitle>
-
-                <CardSubtitle className="eventTime">event time will go here</CardSubtitle>
-
-                <CardText className="eventDescription">card title comig</CardText>
-                <CardText className="eventDetailsLink">View Event Details</CardText>
-
-              </Card>
-            
-       
-          
-        
-      <div className="dashboard-pastevents">
-      <h1>Your Past Events</h1>
-      </div>
+     <div className="home-wrapper">
+      <img
+        div className="home-image"
+        src="https://images.unsplash.com/photo-1467453678174-768ec283a940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1028&q=80"
+        alt=""
+      />
+      <div className="contentbtn">
+      <div className="md-button" onClick={() => history.push("/newevent")}>Create new event</div>
+      {/* <div className="md-button" onClick={() => history.push("/upcomingevent")}>Check upcoming event</div> */}
+</div>
     </div>
   );
 };
