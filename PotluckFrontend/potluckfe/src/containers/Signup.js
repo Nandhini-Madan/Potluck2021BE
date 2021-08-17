@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
-import axios from 'axios'
+
 import { useHistory } from 'react-router-dom'
 import axiosWithAuth from '../utils/axiosWithAuth'
 
@@ -54,7 +54,7 @@ const Signup = () => {
       .then(response => console.log(response))
 
       .catch(err => console.log(err))
-    history.push('/login')
+    history.push('/redirect')
 
     setFormState({
       firstName: '',

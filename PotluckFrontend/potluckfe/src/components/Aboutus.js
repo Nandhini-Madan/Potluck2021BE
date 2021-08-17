@@ -1,7 +1,7 @@
 import React from 'react'
-import about from './about.css'
 import nandhini from './img/Nandhini .jpg'
 import kase from './img/kase.png'
+import './about.css';
 const Aboutus = () => {
     return (
         <>

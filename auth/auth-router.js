@@ -92,7 +92,7 @@ router.post("/:id/addPotluck", async (req, res, next) => {
         next(err)
     }
 })
-router.put("/:id/editPotluck", async (req, res, next) => {
+router.put("/:id/editPotluck", async (req, res, next) =>{
     try {
         const { potluckName, date, time, location, foodItems, notes } = req.body
         const id = req.params.id

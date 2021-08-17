@@ -1,9 +1,5 @@
-import React, { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
-import content from './content.css'
-
-// import UserContext from "../../contexts/UserContext";
-import { Card, Button, CardHeader, CardTitle, CardText, CardSubtitle } from 'reactstrap';
+import React from "react";
+import {useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Content = () => {

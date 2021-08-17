@@ -1,5 +1,5 @@
-import {axiosWithAuth} from '../utils/axiosWithAuth'
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
+import axiosWithAuth from '../utils/axiosWithAuth'
 
 // action creator
 export const getPotluckInvite=()=> async(dispatch)=>{
@@ -13,9 +13,9 @@ export const getPotluckInvite=()=> async(dispatch)=>{
 }
 
 
-export const createPotluck=(pot)=> async(dispatch)=>{
+export const createPotluck=(potluck)=> async(dispatch)=>{
     try {
-        const{data}= await axiosWithAuth().post(":id/addPotluck",pot)
+        const{data}= await axiosWithAuth().post(":id/addPotluck",potluck)
 
         dispatch({type:CREATE, payload: data})
     } catch (error) {
@@ -23,9 +23,9 @@ export const createPotluck=(pot)=> async(dispatch)=>{
     }
 }
 
-export const updatePotluck=(id,post)=> async(dispatch)=>{
+export const updatePotluck=(id,potluck)=> async(dispatch)=>{
     try {
-        const {data}= await axiosWithAuth().put(":id/editPotluck",id,post)
+        const {data}= await axiosWithAuth().put(":id/editPotluck",id,potluck)
         
         dispatch({type:UPDATE, payload: data})
     } catch (error) {

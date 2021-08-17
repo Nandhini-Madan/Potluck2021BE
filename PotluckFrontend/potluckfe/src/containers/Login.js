@@ -1,8 +1,8 @@
 import React, { useState ,useEffect} from 'react'
-// import { Route, Link, useHistory } from "react-router-dom";
+
 import axiosWithAuth from '../utils/axiosWithAuth'
 import * as yup from "yup";
-import { Route, Link , useHistory} from "react-router-dom";
+import { Route,  useHistory} from "react-router-dom";
 
 
 const formSchema = yup.object().shape({
@@ -38,14 +38,8 @@ const history = useHistory();
       axiosWithAuth().post('login',formState)
         .then((response) => {
         localStorage.setItem('token', response.data.token)
-      history.push("/dashboard")
-    })
-        // .catch((err) => console.log(err));
-        // setFormState({
-        //   emailId: "",
-        //   password:""
-        // });
-        
+      history.push("/upcoming")
+    })        
   };
 
 

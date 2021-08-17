@@ -1,8 +1,8 @@
 
 import { combineReducers } from 'redux';
 
-import state from './potluck';
+import potlucks from './potluck';
 // import auth from './auth'
 
-export const reducers = combineReducers({state});
+export const reducers = combineReducers({potlucks});
 

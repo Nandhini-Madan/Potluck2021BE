@@ -1,6 +1,6 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
 
-export default(state=[], action)=>{
+export default(potlucks=[], action)=>{
     switch (action.type) {
         case FETCH_ALL:
             
@@ -8,17 +8,17 @@ export default(state=[], action)=>{
 
         case CREATE:
             
-            return [...state, action.payload];
+            return [...potlucks, action.payload];
     
         case UPDATE:
        
-            return state.map((potluck)=>potluck._id === action.payload._id ? action.payload: potluck);
+            return potlucks.map((potluck)=>potluck.id === action.payload.id ? action.payload: potluck);
 
         case DELETE:
             
-            return state.filter((potluck)=>potluck._id !== action.payload);
+            return potlucks.filter((potluck)=>potluck.id !== action.payload);
 
         default:
-            return state;
+            return potlucks;
     }
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-
-
 import { useHistory } from 'react-router-dom'
+
 
 const Home = (props) => {
     const history = useHistory();
     return (
-    
+    <>
 <div className="home">
 <h2>Potluck Planner!</h2>
 <div className="homepage">
@@ -23,7 +22,7 @@ const Home = (props) => {
 
 
     </div>
-  
+  </>
 
     )
 }
