@@ -7,6 +7,12 @@ async function find() {
         .select("u.ID", "u.firstName")
 
 }
+async function findPotluck(Id){
+    return await db("addPotluck")
+        .select("potluckId", "potluckName", "date", "time", "location", "foodItems","notes")
+        .where("userId", Id)
+        
+}
 
 async function addPotluck(potluck, Id) {
     const data = { userId: Id, ...potluck }
@@ -72,4 +78,5 @@ async function deletePotluck(id){
         addUsers,
         updatePotluck,
         deletePotluck,
+        findPotluck
     }
