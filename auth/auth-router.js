@@ -78,6 +78,17 @@ router.post("/register", async (req, res, next) => {
         next(err)
     }
 })
+router.get("/:userId/potluckList",async(req,res,next)=>{
+    try{
+        const userId=req.params.userId
+        const potluckList=await model.findPotluck(userId)
+        console.log("List of potluck ",potluckList)
+        res.status(200).json(potluckList)
+    }
+    catch(err){
+    next(err)
+    }
+})
 //-/:id/addPotluck
 router.post("/:id/addPotluck", async (req, res, next) => {
     try {
