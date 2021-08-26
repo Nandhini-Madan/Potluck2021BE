@@ -4,7 +4,7 @@ import axiosWithAuth from '../utils/axiosWithAuth'
 // action creator
 export const getPotluckInvite=()=> async(dispatch)=>{
     try {
-        const{data}= await axiosWithAuth.get("users")
+        const{data}= await axiosWithAuth.get(":userId/potluckList")
 
         dispatch({type:FETCH_ALL, payload:data})
     } catch (error) {

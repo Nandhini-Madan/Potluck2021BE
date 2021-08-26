@@ -11,7 +11,7 @@ const EventCardtwo = ({setCurrentId}) => {
     const classes=useStyles()
     console.log(potlucks)
     return (
-       !potlucks.length ? <CircularProgress/> :(
+       !potlucks.length ?<h4> No event to Show</h4> :(
            <Grid className={classes.container} container alignItems="stretch" spacing={3}>
            {potlucks.map((potluck)=>(
                <Grid key={potluck.id} item xs={12} sm={6}>

@@ -39,7 +39,11 @@ const history = useHistory();
         .then((response) => {
         localStorage.setItem('token', response.data.token)
       history.push("/upcoming")
-    })        
+    })  
+    .catch(err=>{
+            console.log("Error message",err)
+
+        })     
   };
 
 

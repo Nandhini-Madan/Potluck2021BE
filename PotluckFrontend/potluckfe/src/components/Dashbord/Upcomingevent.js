@@ -26,7 +26,6 @@ useEffect(() => {
                 </Grid>   
                 <Grid item xs={12} sm={4}>
                 <CreateEvent currentId={currentId} setCurrentId={setCurrentId} />
-
                 </Grid>    
     </Grid>
      </Container>

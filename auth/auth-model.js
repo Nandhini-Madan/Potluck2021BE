@@ -15,6 +15,7 @@ async function findPotluck(Id){
 }
 
 async function addPotluck(potluck, Id) {
+    console.log(potluck)
     const data = { userId: Id, ...potluck }
     const [id] = await db("addPotluck").insert(data).returning("potluckId")
     console.log("PotluckId", id)

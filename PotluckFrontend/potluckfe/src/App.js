@@ -9,13 +9,14 @@ import PrivateRoute from './containers/PrivateRoute';
 import CreateEvent from "./components/Dashbord/CreateEvent";
 import SignUpRedirect from './containers/SignUpRedirect'
 import { Link, Route, Switch } from 'react-router-dom'  
-
 import Upcomingevent from "./components/Dashbord/Upcomingevent";
+// import {useDispatch} from 'react-redux'
 
 
 import './App.css';
 
 function App() {
+  // const dispatch= useDispatch();
   return (
     <div className="App">
     <nav>
