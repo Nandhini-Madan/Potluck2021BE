@@ -34,7 +34,7 @@ potluckfood2021.netlify.app
 # POST
 -/login
 -/register
--/:id/addPotluck
+-/addPotluck
 # PUT
 -/:id/editPotluck
 # DELETE
