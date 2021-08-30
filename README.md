@@ -1,7 +1,7 @@
 # Herokku 
 https://potluck2020.herokuapp.com/
 # Front End 
-potluckfood2021.netlify.app
+https://potluckfood2021.netlify.app
 
 # back-end
  POTLUCK TABLE 
