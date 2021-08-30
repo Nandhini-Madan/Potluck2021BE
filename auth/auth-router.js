@@ -90,10 +90,12 @@ router.get("/:userId/potluckList",async(req,res,next)=>{
     }
 })
 //-/:id/addPotluck
-router.post("/:id/addPotluck", async (req, res, next) => {
+router.post("/addPotluck",restrict ,async (req, res, next) => {
     try {
+       
         const { potluckName, date, time, location, foodItems, notes } = req.body
-        const id = req.params.id
+        console.log("addpotluck",req.token.userID)
+        const id = req.token.userID
         const newPotluck = await model.addPotluck(req.body, id)
         console.log("New user", newPotluck)
         res.status(201).json(newPotluck)
@@ -103,11 +105,14 @@ router.post("/:id/addPotluck", async (req, res, next) => {
         next(err)
     }
 })
-router.put("/:id/editPotluck", async (req, res, next) =>{
+router.put("/:id/editPotluck",restrict, async (req, res, next) => {
     try {
+        console.log("editmode")
         const { potluckName, date, time, location, foodItems, notes } = req.body
+       const userID=req.token.userID
+       console.log("userID edit",userID)
         const id = req.params.id
-        const idCheck = await model.findById(id)
+        const idCheck = await model.findById(id,userID)
         console.log("potluck", idCheck)
         if (!idCheck) {
             res.status(409).json({
@@ -116,7 +121,7 @@ router.put("/:id/editPotluck", async (req, res, next) =>{
             })
 
         }
-        const editPotluck = await model.updatePotluck(req.body, id)
+        const editPotluck = await model.updatePotluck(req.body, id,userID)
         console.log("Edit", editPotluck)
         res.status(200).json(editPotluck)
     }
@@ -125,10 +130,10 @@ router.put("/:id/editPotluck", async (req, res, next) =>{
     }
 })
 
-
 router.delete("/:id/deletePotluck", async (req, res, next) => {
     const id = req.params.id
-    const deleted = await model.deletePotluck(id)
+    const userID=req.token.userID
+    const deleted = await model.deletePotluck(id,userID)
     try {
         if (deleted) {
             res.status(200).json({
@@ -139,8 +144,6 @@ router.delete("/:id/deletePotluck", async (req, res, next) => {
     catch (err) {
         next(err)
     }
-
-
 
 })
 
