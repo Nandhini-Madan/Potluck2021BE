@@ -4,7 +4,7 @@ https://potluck2020.herokuapp.com/
 https://potluckfood2021.netlify.app
 
 # back-end
- POTLUCK TABLE 
+ # POTLUCK TABLE 
 
 
 ### addPotluck
