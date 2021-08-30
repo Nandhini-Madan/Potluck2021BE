@@ -130,7 +130,7 @@ router.put("/:id/editPotluck",restrict, async (req, res, next) => {
     }
 })
 
-router.delete("/:id/deletePotluck", async (req, res, next) => {
+router.delete("/:id/deletePotluck", restrict,async (req, res, next) => {
     const id = req.params.id
     const userID=req.token.userID
     const deleted = await model.deletePotluck(id,userID)
