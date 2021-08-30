@@ -15,11 +15,12 @@ async function findPotluck(Id){
 }
 
 async function addPotluck(potluck, Id) {
-    console.log(potluck)
     const data = { userId: Id, ...potluck }
-    const [id] = await db("addPotluck").insert(data).returning("potluckId")
-    console.log("PotluckId", id)
-    return findById(id)
+
+    const [result] = await db("addPotluck").insert(data).returning(["potluckId", "userId"])
+    const {potluckId,userId}=result;
+    console.log("PotluckId", potluckId, "userId",userId)
+    return findById(potluckId,userId)
 
 }
 async function addUsers(data) {
@@ -35,12 +36,12 @@ async function findByUserId(id) {
         .where("ID", id)
         .first()
 }
-async function findById(id) {
-    console.log("addpotluck id", id)
+async function findById(id,userID) {
+    console.log("potluck id", id, "userid",userID)
     return await db("addPotluck")
         .select("potluckId", "potluckName", "date", "time", "location", "foodItems", "notes", "userId")
-        .where("potluckId", id)
-        .first()
+        .where({"potluckId":id,"userId":userID})
+       // .first()
 }
 async function findByEmailId(emailId) {
     console.log("db email", emailId)
@@ -50,12 +51,12 @@ async function findByEmailId(emailId) {
         .first()
 }
 
-async function updatePotluck(data, id) {
-    console.log("updatePotluck", id)
+async function updatePotluck(data, id, userID) {
+    console.log("updatePotluck", id ,"userId",userID)
     await db("addPotluck")
-        .where("potluckId", id)
+        .where({"potluckId": id,"userId":userID})
         .update(data)
-    return findById(id)
+    return findById(id,userID)
 
 }
 async function deletePotluck(id){
