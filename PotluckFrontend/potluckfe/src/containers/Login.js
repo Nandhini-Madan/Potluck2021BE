@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 
-import axiosWithAuth from '../utils/axiosWithAuth'
+import axios from 'axios'
 import * as yup from "yup";
 import { Route,  useHistory} from "react-router-dom";
 
@@ -35,9 +35,11 @@ const history = useHistory();
   const formSubmit = e => {
       console.log(formSubmit)
     e.preventDefault();
-      axiosWithAuth().post('login',formState)
+      axios.post('https://potluck2020.herokuapp.com/login',formState)
         .then((response) => {
         localStorage.setItem('token', response.data.token)
+
+        console.log('token.login',response)
       history.push("/upcoming")
     })  
     .catch(err=>{

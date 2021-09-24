@@ -129,12 +129,8 @@ span{
 .slide_right:hover {
   box-shadow: inset 400px 0 0 0 orange;
 }
-.homebuttons{
-margin-top: 0;
-margin-bottom: 5%;
 
-}
-/* homecss end */
+
 /* formcss  start*/
 form {
   display: flex;
